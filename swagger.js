@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'Jobs API'
     },
-    host: 'lesson6-cse-341.onrender.com',
+    host: 'lesson7-cse-341.onrender.com',
     // host: 'localhost:8080',
 
     //always remember to change http below to

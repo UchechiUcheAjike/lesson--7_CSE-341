@@ -5,9 +5,11 @@
     "description": "Jobs API",
     "version": "1.0.0"
   },
-  "host": "lesson6-cse-341.onrender.com",
+  "host": "lesson7-cse-341.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "paths": {
     "/api-docs": {
       "get": {
@@ -19,7 +21,9 @@
     "/jobs/": {
       "get": {
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -80,7 +84,9 @@
     "/jobs/{id}": {
       "get": {
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
