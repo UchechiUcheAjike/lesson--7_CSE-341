@@ -1,3 +1,4 @@
+// Configure Passport.js with the desired OAuth providers (e.g. Google and Facebook)
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
@@ -20,3 +21,18 @@ passport.use(new FacebookStrategy({
 }, (accessToken, refreshToken, profile, done) => {
     // Handle user authentication and authorization with Facebook
 }));
+
+// Protect desired routes by checking if the user is authenticated
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/login');
+}
+
+// Example route that requires authentication
+app.get('/dashboard', isAuthenticated, (req, res) => {
+    res.render('dashboard', {
+        user: req.user
+    });
+});
